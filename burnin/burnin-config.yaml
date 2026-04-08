@@ -1,0 +1,45 @@
+version: "1"
+
+server:
+  address: "http://localhost:9090"
+  broker_address: "localhost:50000"
+
+mode: "functional"
+duration: "15m"
+
+suites:
+  mcp_core: true
+  mcp_bridge: true
+  mcp_protocol: true
+  mcp_soak: false
+
+soak:
+  rate: 50
+  snapshot_interval: "30s"
+  channels_per_pattern: 2
+
+thresholds:
+  max_error_rate_pct: 1.0
+  max_p99_latency_ms: 5000
+  max_p999_latency_ms: 10000
+  min_throughput_pct: 90
+
+output:
+  report_file: ""
+  log_level: "info"
+  log_format: "text"
+
+agents:
+  base_port: 18080
+  echo:
+    count: 2
+  slow:
+    count: 1
+    delay_ms: 2000
+  error:
+    count: 1
+    error_rate: 1.0
+  streaming:
+    count: 2
+    events_per_stream: 10
+    event_delay_ms: 100

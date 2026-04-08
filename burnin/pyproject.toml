@@ -1,0 +1,18 @@
+[project]
+name = "kubemq-mcp-burnin"
+version = "1.0.0"
+description = "KubeMQ MCP burn-in test suite"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx",
+    "aiohttp",
+    "pyyaml",
+    "kubemq",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/kubemq_mcp_burnin"]

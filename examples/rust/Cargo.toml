@@ -1,0 +1,70 @@
+[package]
+name = "kubemq-mcp-rust-examples"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rmcp = { version = "1", features = ["client", "transport-streamable-http-client-reqwest"] }
+tokio = { version = "1", features = ["full"] }
+serde_json = "1"
+anyhow = "1"
+
+[[bin]]
+name = "queue_send"
+path = "queue_send.rs"
+
+[[bin]]
+name = "queue_receive"
+path = "queue_receive.rs"
+
+[[bin]]
+name = "queue_peek"
+path = "queue_peek.rs"
+
+[[bin]]
+name = "events_publish"
+path = "events_publish.rs"
+
+[[bin]]
+name = "events_store_publish"
+path = "events_store_publish.rs"
+
+[[bin]]
+name = "events_store_read"
+path = "events_store_read.rs"
+
+[[bin]]
+name = "events_store_read_latest"
+path = "events_store_read_latest.rs"
+
+[[bin]]
+name = "command_send"
+path = "command_send.rs"
+
+[[bin]]
+name = "query_send"
+path = "query_send.rs"
+
+[[bin]]
+name = "channel_list"
+path = "channel_list.rs"
+
+[[bin]]
+name = "channel_info"
+path = "channel_info.rs"
+
+[[bin]]
+name = "agent_list"
+path = "agent_list.rs"
+
+[[bin]]
+name = "agent_info"
+path = "agent_info.rs"
+
+[[bin]]
+name = "agent_send"
+path = "agent_send.rs"
+
+[[bin]]
+name = "agent_query"
+path = "agent_query.rs"
