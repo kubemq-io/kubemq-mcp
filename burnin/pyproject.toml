@@ -7,7 +7,7 @@ dependencies = [
     "httpx",
     "aiohttp",
     "pyyaml",
-    "kubemq",
+    "kubemq>=4.1.5",
 ]
 
 [build-system]
