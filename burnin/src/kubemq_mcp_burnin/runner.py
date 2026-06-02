@@ -36,6 +36,7 @@ class BurninRunner:
                 await agent_manager.create_all()
                 await agent_manager.start_all()
                 await agent_manager.register_all()
+                await agent_manager.start_heartbeats()
                 logger.info("All mock agents started and registered")
             except Exception as exc:
                 logger.error("Failed to set up agents: %s", exc)
