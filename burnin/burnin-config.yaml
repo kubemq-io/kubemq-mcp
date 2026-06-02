@@ -11,7 +11,7 @@ suites:
   mcp_core: true
   mcp_bridge: true
   mcp_protocol: true
-  mcp_soak: false
+  mcp_soak: true
 
 soak:
   rate: 50
