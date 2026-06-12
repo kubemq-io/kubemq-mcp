@@ -184,11 +184,11 @@ class MCPSoakSuite(BaseSuite):
         cycles = 0
         start = time.time()
 
+        ch = self._channel("s04")  # reuse one channel; the test churns sessions, not channels
         while time.time() - start < duration:
             client = MCPClient(self.config.server.address)
             try:
                 await client.initialize()
-                ch = self._channel("s04")
                 await client.tools_call("queue_send", {"channel": ch, "body": f"s04-cycle-{cycles}"})
                 cycles += 1
             except Exception as exc:
@@ -218,8 +218,8 @@ class MCPSoakSuite(BaseSuite):
             try:
                 await client.initialize()
                 worker_start = time.time()
+                ch = f"soak-s05-worker-{worker_id}-{uuid.uuid4().hex[:6]}"  # one channel per worker, reused
                 while time.time() - worker_start < duration:
-                    ch = f"soak-s05-worker-{worker_id}-{uuid.uuid4().hex[:6]}"
                     try:
                         await client.tools_call("queue_send", {"channel": ch, "body": f"w{worker_id}-msg"})
                         ops_per_worker[worker_id] += 1
