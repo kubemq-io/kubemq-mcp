@@ -10,7 +10,7 @@ Get up and running with KubeMQ MCP in 5 minutes.
 ## Step 1: Start KubeMQ
 
 ```bash
-docker run -d --name kubemq -p 9090:9090 -p 50000:50000 kubemq/kubemq
+docker run -d --name kubemq -p 9090:9090 -p 50000:50000 europe-docker.pkg.dev/kubemq/images/kubemq-next:latest
 ```
 
 MCP is enabled by default on the `/mcp` endpoint. No special environment variable is required.

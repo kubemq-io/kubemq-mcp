@@ -43,7 +43,7 @@ KubeMQ MCP is a standalone repository providing comprehensive documentation, cop
 ### 1. Start KubeMQ
 
 ```bash
-docker run -d --name kubemq -p 9090:9090 -p 50000:50000 kubemq/kubemq
+docker run -d --name kubemq -p 9090:9090 -p 50000:50000 europe-docker.pkg.dev/kubemq/images/kubemq-next:latest
 ```
 
 ### 2. Verify MCP Endpoint
